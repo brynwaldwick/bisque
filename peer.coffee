@@ -1,6 +1,6 @@
 Biscuit = require './biscuit'
 
-BisquePeer = class BiscuitPeer
+BisquePeer = class BisquePeer
 
     initializeBisque: (reward_threshold) ->
         @biscuit_creators = {}

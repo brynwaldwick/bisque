@@ -114,13 +114,14 @@ Some functions to explore:
 
 For each peer, keep track of...
 
-The list of peers they know about... and for each of those
-Are they connected
-List of messages sent
-List of messages received
-List of biscuits received
-Biscuit/message score (ranked)
-Downstream peers (ranked)
+The list of peers they know about (this could also include peers not currently connected - either through old connections or higher-order biscuit trails)... and for each of those
+
+* Are they connected
+* List of messages sent
+* List of messages received
+* List of biscuits received
+* Biscuit/message score (ranked)
+* Downstream peers (ranked)
 
 
 ### Potential issues
