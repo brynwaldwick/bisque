@@ -53,7 +53,7 @@ With geometric weights, the magnitude of the N biscuit to be passed to the ith d
 where N is the magnitude of the N biscuit.
 
 For n = 3 the coefficients are
-1, 1/2, 1/4
+1 for the first deliverer, 1/2 for the second deliverer, and 1/4 for the third
 
 For n = 4 the coefficients are
 1, 1/2, 1/4, 1/8
