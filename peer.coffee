@@ -1,6 +1,6 @@
 Biscuit = require './biscuit'
 
-BisquePeer = class BiscuitPeer
+BisquePeer = class BisquePeer
 
     biscuit_creators = {}
     biscuit_deliverers = {}
