@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        title Bisque
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=no')
+        meta(name='apple-mobile-web-app-capable', content='yes')
+        link(href='//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
+        link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Roboto:400,500,700')
+        link(rel='stylesheet', href="#{base_url || ''}/css/app.css")
+        link(rel='shortcut icon', href="/img/favicon.png")
+    body
+        #app
+            .spinner-container
+                span.loading Loading Bisque Monitor
+
+        script.
+            window.client_key = "#{client_key}";
+        if user
+            script.
+                window.user = !{JSON.stringify(user)};
+
+        script(src='/socket.io/socket.io.js')
+        script(src="#{base_url || ''}/js/app.js")
+
+

@@ -1,0 +1,47 @@
+a
+    text-decoration: none
+
+$padding
+    tiny: 6px
+    small: 10px
+    default: 16px
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html, body, #app, .app, .content, .events-feed, .messages
+    height: 100%
+
+.nav
+    padding: $padding.default
+    font-weight: 500
+
+.content
+    padding: $padding.default
+
+h5
+    margin-bottom: $padding.small
+
+.peer
+    padding: $padding.small
+    border: 2px solid #aaa
+    margin-bottom: $padding.small
+
+    .summary
+        display: flex
+        margin-bottom: $padding.small
+
+        .username
+            margin-left: $padding.small
+            font-weight: 500
+
+    .connections, .biscuits, .messages
+        padding: $padding.small
+        background: #d8d8d8
+
+.biscuit
+    strong
+        width: 40px
+        text-align: center
