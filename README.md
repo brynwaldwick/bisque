@@ -109,19 +109,11 @@ Some functions to explore:
 
 `requestTrail` - Recursively request any promising biscuit trails towards a peer id from all connected peers. Since this is sending another message perhaps it is best to simply flood the message to all connected peers in this case.
 
+When recieving a message and needing to relay, a peer can decide (based on the message's destination and the peers own messaging history) to...
 
-### UI for measuring & testing in a simple webapp
-
-For each peer, keep track of...
-
-The list of peers they know about (this could also include peers not currently connected - either through old connections or higher-order biscuit trails)... and for each of those
-
-* Are they connected
-* List of messages sent
-* List of messages received
-* List of biscuits received
-* Biscuit/message score (ranked)
-* Downstream peers (ranked)
+* Flood the message
+* Send it to a subset of peers
+* Eat the message and stop propagation
 
 
 ### Potential issues
@@ -130,4 +122,5 @@ The list of peers they know about (this could also include peers not currently c
     * Briefly, it seems like we must be able to do better than N^2 message flooding in the base case. The number of biscuits sent per successful message delivery is roughly `n_avg^p_avg`, where n_avg is the average reward threshold set by the network, and p_avg is the average path length required to propagate a message to its full set of intended destinations.
 * Forged biscuits (?)
 * Tampered messages (beyond the scope of initial research)
-* Is it possible to attack this and stop some peers from getting messages altogether by tricking other nodes into optimizing them off the network?
+* Is it possible to attack this and stop some peers from getting messages altogether by tricking other nodes into optimizing them off the network? Likely, if biscuits are forgeable.
+    * What kind of system might help us stamp out forgeable biscuits?... ;)
