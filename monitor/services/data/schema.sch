@@ -16,7 +16,7 @@ Message
     target_peer Peer > target
 
 Biscuit
-    magnitude String
+    magnitude Float
     message Message > message_id
     from_peer Peer > from_peer_id
     to_peer Peer > to_peer_id
