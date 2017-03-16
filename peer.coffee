@@ -2,9 +2,10 @@ Biscuit = require './biscuit'
 
 BisquePeer = class BisquePeer
 
-    initializeBisque: (reward_threshold) ->
+    initializeBisque: (reward_threshold, debug=false) ->
         @biscuit_creators = {}
         @biscuit_deliverers = {}
+        @debug = debug
         @reward_threshold = reward_threshold
         @buildDenominator()
 
@@ -42,6 +43,9 @@ BisquePeer = class BisquePeer
             _b = new Biscuit _N, message_id, creator_id
             @sendBiscuit _b, d_id
 
+        if @debug
+            @reportState()
+
     findDeliverers: (message_id, i) ->
         (@messages[message_id]?.peers || []).slice(0, i-1)
 
@@ -49,5 +53,9 @@ BisquePeer = class BisquePeer
         peer = @peers[peer_id]
         biscuit.from = @id
         @sendMessageToPeer {kind: 'biscuit', biscuit}, peer_id
+
+    reportState: ->
+        # TODO: post my state to the UI
+        # {biscuit_creators, biscuit_deliverers, reward_threshold, messages}
 
 module.exports = BisquePeer
